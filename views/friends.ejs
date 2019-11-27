@@ -1,8 +1,6 @@
 <%- include ('partials/header') %>
-Here is your friends list:
-
 <% friends.forEach(friend => { %>
-    <li><%= friend.name %></li>
+    <li class="listItem"><%= friend.name %></li>
 <% }) %>
 
 <form action="/addFriend" method="POST">

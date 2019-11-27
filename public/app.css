@@ -1,4 +1,25 @@
-body{
-    background-color: yellow;
-    color: purple;
+.friends {
+    height: 50px;
+    background-color: royalblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.welcome {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.listItem {
+    font-size: 1.3rem;
+    list-style: none;
+    background-color: #ccc;
+    height: 30px;
+    width: 96%;
+    text-align: center;
+    margin: 5px auto;
+    color: blue;
+}
+
