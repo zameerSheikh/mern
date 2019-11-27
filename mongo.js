@@ -15,7 +15,7 @@ const addFriend = async (req, res, next) => {
     }
     client.close();
 
-    res.json(name)
+    res.render('friends', {friends: friendsList})
 };
 
 const getFriends = async (req, res, next) => {
@@ -32,8 +32,8 @@ const getFriends = async (req, res, next) => {
     }
     client.close();
 
-    res.json(friendsList || [])
-    // res.render('friends', {friends: friendsList})
+    // res.json(friendsList || [])
+    res.render('friends', {friends: friendsList})
 }
 
 module.exports = {
