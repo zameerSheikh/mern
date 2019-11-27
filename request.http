@@ -1,0 +1,6 @@
+POST 'http://localhost:3200/addFriend'
+Content-Type: 'application/json'
+
+{
+    name: 'Maxx'
+}
