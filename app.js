@@ -35,7 +35,7 @@ app.get('*', (req, res) => {
     res.send('un oh, requested url not found.');
 })
 
-const port = process.env.port || 4000
+const port = process.env.PORT || 4000
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
 })
