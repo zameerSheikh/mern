@@ -9,13 +9,13 @@ const addFriend = async (req, res, next) => {
     try {
        await client.connect();
        const db = client.db();
-       const result = db.collection('friends_list').insertOne(name);
+       const result = db.collection('friends_list').insertOne({name});
     } catch (error) {
         return res.json({message: 'Could not add your friend 😟'})
     }
     client.close();
 
-    res.render('friends', {friends: friendsList})
+    res.redirect('friends')
 };
 
 const getFriends = async (req, res, next) => {
