@@ -22,17 +22,10 @@ app.get('/friends', mong.getFriends);
 
 app.post('/addFriend', mong.addFriend)
 
-// app.get('/friends', (req, res) => {
-//     res.render('friends', {friends})
-// });
-
-// app.post('/addFriend', (req, res) => {
-//     friends.push(req.body.name);
-//     res.redirect('/friends');
-// })
+app.delete('/deleteFriend/:id', mong.deleteFriend)
 
 app.get('*', (req, res) => {
-    res.send('un oh, requested url not found.');
+    res.render('404');
 })
 
 const port = process.env.PORT || 4000

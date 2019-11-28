@@ -18,6 +18,22 @@ const addFriend = async (req, res, next) => {
     res.redirect('friends')
 };
 
+const deleteFriend = async (req, res, next) => {
+    let id = req.params.id;
+    const client = new MongoClient(url);
+
+    try {
+       await client.connect();
+       const db = client.db();
+       const result = db.collection('friends_list').deleteOne({id});
+    } catch (error) {
+        return res.json({message: 'Could not add your friend 😟'})
+    }
+    client.close();
+
+    res.redirect('friends')
+}
+
 const getFriends = async (req, res, next) => {
     const client = new MongoClient(url);
     let friendsList;
@@ -38,5 +54,6 @@ const getFriends = async (req, res, next) => {
 
 module.exports = {
     addFriend,
-    getFriends
+    getFriends,
+    deleteFriend
 }
