@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/home', (req, res) => {
-    res.render('home')
+    res.render('home',{name: 'zameer'})
 })
 
 app.get('/friends', mong.getFriends);

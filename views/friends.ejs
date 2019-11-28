@@ -1,7 +1,8 @@
 <%- include ('partials/header') %>
 <div class="friends"><p class="welcome">Welcome Friends</p></div>
 <% friends.forEach(friend => { %>
-    <li class="listItem"><%= friend.name %><a href="/deleteFriend/<%- friend.id %>">X</a></li>
+    <% let {id} = friend %>
+    <li class="listItem"><%= friend.name %><a href="/deleteFriend/<%= id %>">X</a></li>
 <% }) %>
 
 <form action="/addFriend" method="POST">
