@@ -27,7 +27,7 @@ const deleteFriend = async (req, res, next) => {
        const db = client.db();
        const result = db.collection('friends_list').deleteOne({id});
     } catch (error) {
-        return res.json({message: 'Could not add your friend 😟'})
+        return res.json({message: 'Could not delete your friend 😟'})
     }
     client.close();
 
@@ -44,7 +44,7 @@ const getFriends = async (req, res, next) => {
         
     } catch (error) {
         console.log('Could not fetch your friends list. 😔');
-        // res.render('friends', {friends: friendsList || []})
+        res.render('friends', {friends: []})
     }
     client.close();
 

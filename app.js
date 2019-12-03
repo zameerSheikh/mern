@@ -1,5 +1,6 @@
 var express = require('express');
-const mong = require('./mongo');
+// const mong = require('./mongo');
+const mong = require('./mongoose');
 
 var app = express();
 var bodyparser = require('body-parser');
@@ -11,10 +12,6 @@ app.set('view engine', 'ejs')
 app.use(bodyparser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
-    res.send('You got to the root url')
-})
-
-app.get('/home', (req, res) => {
     res.render('home',{name: 'zameer'})
 })
 
@@ -22,7 +19,7 @@ app.get('/friends', mong.getFriends);
 
 app.post('/addFriend', mong.addFriend)
 
-app.delete('/deleteFriend/:id', mong.deleteFriend)
+app.get('/deleteFriend/:id', mong.deleteFriend)
 
 app.get('*', (req, res) => {
     res.render('404');
